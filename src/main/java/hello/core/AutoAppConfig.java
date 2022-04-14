@@ -22,10 +22,10 @@ public class AutoAppConfig {
     // - @Repository : 스프링 데이터 접근 계층에서 사용 / 스프링 데이터 접근 계층으로 인식하고, 데이터 계층의 예외를 스프링 예외로 변환해준다.
     // - @Configuration : 스프링 설정 정보에서 사용 / 스프링 빈이 싱글톤을 유지하도록 추가 처리
 
-    @Bean(name = "memoryMemberRepository")
+    /*@Bean(name = "memoryMemberRepository")
     public MemberRepository memberRepository() {
         return new MemoryMemberRepository();
-    }
+    }*/
 
     // **자동 빈 등록 vs 자동 빈 등록**
     //- 컴포넌트 스캔에 의해 자동으로 스프링 빈이 등록되는데, 그 이름이 같은 경우 스프링은 오류를 발생시킨다.

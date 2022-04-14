@@ -4,20 +4,21 @@ import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    /* @Autowired // 생성자가 딱 1개만 있으면 @Autowired 생략해도 자동 주입 된다
+    @Autowired // 생성자가 딱 1개만 있으면 @Autowired 생략해도 자동 주입 된다
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
-    } */
+    }
 
     // notion 참고 부탁...
     // setter 의존 관계 주입
