@@ -10,4 +10,8 @@ public class CoreApplication {
 		SpringApplication.run(CoreApplication.class, args);
 	}
 
+	// 수동 빈 등록, 자동 빈 등록 오류시 스프링 부트 에러
+	//`Consider renaming one of the beans or enabling overriding by setting
+	//spring.main.allow-bean-definition-overriding=true`
+
 }
