@@ -1,9 +1,6 @@
 package hello.core.lifecycle;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
-
-public class NetworkClient implements InitializingBean, DisposableBean {
+public class NetworkClient {
 
     private String url;
 
@@ -29,6 +26,17 @@ public class NetworkClient implements InitializingBean, DisposableBean {
         System.out.println("close : " + url);
     }
 
+    public void init() {
+        System.out.println("init 호출");
+        connect();
+        call("초기화 연결 메세지");
+    }
+
+    public void close() {
+        System.out.println("close 호출");
+        disconnect();
+    }
+
     // 결과
     // 생성자 호출 url : null
     // afterPropertiesSet 호출
@@ -37,7 +45,7 @@ public class NetworkClient implements InitializingBean, DisposableBean {
     // 15:50:53.519 [main] DEBUG org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@1b11171f, started on Thu Apr 14 15:50:53 KST 2022
     // destroy 호출
     // close : http://localhost:80
-    @Override
+    /*@Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("afterPropertiesSet 호출");
         connect();
@@ -48,5 +56,5 @@ public class NetworkClient implements InitializingBean, DisposableBean {
     public void destroy() throws Exception {
         System.out.println("destroy 호출");
         disconnect();
-    }
+    }*/
 }
