@@ -1,5 +1,9 @@
 package hello.core.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService {
 
     // configuration 없으면 주입받는 객체는 빈으로 등록이 안된다
@@ -7,6 +11,7 @@ public class MemberServiceImpl implements MemberService {
     // ^ 얘랑 똑같음
     private final MemberRepository memberRepository;
 
+    @Autowired // ac.getBean(MemberRepository.class)
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
