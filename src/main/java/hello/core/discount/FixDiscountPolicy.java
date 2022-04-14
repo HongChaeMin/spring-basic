@@ -2,7 +2,9 @@ package hello.core.discount;
 
 import hello.core.member.Grade;
 import hello.core.member.Member;
+import org.springframework.stereotype.Component;
 
+@Component // NoUniqueBeanDefinitionException 오류 발생
 public class FixDiscountPolicy implements DiscountPolicy {
 
     private final int DISCOUNT_FIX_AMOUNT = 1000;
